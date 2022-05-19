@@ -70,7 +70,7 @@ const ShowToDo = () => {
             </form>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>
                 {
-                    taskLists.map(taskList => <ListCard key={taskList._id} taskList={taskList} ></ListCard>)
+                    taskLists.map(taskList => <ListCard refetch={refetch} key={taskList._id} taskList={taskList} ></ListCard>)
                 }
             </div>
         </div>
