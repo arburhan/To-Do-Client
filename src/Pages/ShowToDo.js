@@ -1,5 +1,6 @@
 import React from 'react';
 import { useQuery } from 'react-query';
+import { toast } from 'react-toastify';
 import ListCard from './ListCard';
 
 const ShowToDo = () => {
@@ -12,8 +13,8 @@ const ShowToDo = () => {
     }
     const handleTaskSubmit = e => {
         e.preventDefault();
-        const taskName = e.target.name.value;
-        const taskDescription = e.target.description.value;
+        let taskName = e.target.name.value;
+        let taskDescription = e.target.description.value;
         const newTask = {
             name: taskName,
             description: taskDescription
@@ -28,10 +29,11 @@ const ShowToDo = () => {
             .then(res => res.json())
             .then(data => {
                 // close modal
-                console.log(data);
+                taskName = '';
+                taskDescription = '';
                 if (data.success) {
                     refetch();
-                    // toast(``);
+                    toast.success(`task added successfully`);
                 }
             })
     }
