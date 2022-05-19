@@ -3,6 +3,11 @@ import { toast } from 'react-toastify';
 
 const ListCard = ({ taskList, refetch }) => {
     const { _id, name, description } = taskList;
+    const completeTask = id => {
+        toast.success('congrats! you complete task :)');
+        document.getElementById('complete').className.replace('btn-secondary');
+
+    }
     const deleteItem = id => {
         const procced = window.confirm('Are you sure delete this item? ');
         console.log(id)
@@ -25,7 +30,7 @@ const ListCard = ({ taskList, refetch }) => {
                 <h2 className="card-title">{name}</h2>
                 <p>{description}</p>
                 <div className="card-actions">
-                    <button className="btn btn-primary">Complete</button>
+                    <button onClick={() => { completeTask(_id) }} id='complete' className="btn btn-primary">Complete</button>
                     <button onClick={() => { deleteItem(_id) }} className="btn bg-red-600">Delete</button>
                 </div>
             </div>
