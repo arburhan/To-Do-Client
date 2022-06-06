@@ -1,30 +1,37 @@
 [
     {
         "name":"Going School",
-        "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit velit dicta expedita ullam placeat impedit iusto sapiente modi doloribus voluptatibus."
+        "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit velit dicta expedita ullam placeat impedit iusto sapiente modi doloribus voluptatibus.",
+        "tapClass": "line-through"
     },
     {
         "name":"Hangout with tom",
-        "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit velit dicta expedita ullam placeat impedit iusto sapiente modi doloribus voluptatibus."
+        "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit velit dicta expedita ullam placeat impedit iusto sapiente modi doloribus voluptatibus.",
+        "tapClass": "line-through"
     },
     {
         "name":"Sirajul sirer task",
-        "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit velit dicta expedita ullam placeat impedit iusto sapiente modi doloribus voluptatibus."
+        "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit velit dicta expedita ullam placeat impedit iusto sapiente modi doloribus voluptatibus.",
+        "tapClass": "line-through"
     },
     {
         "name":"Jerry Birthday",
-        "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit velit dicta expedita ullam placeat impedit iusto sapiente modi doloribus voluptatibus."
+        "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit velit dicta expedita ullam placeat impedit iusto sapiente modi doloribus voluptatibus.",
+        "tapClass": "line-through"
     },
     {
         "name":"Cook noodlus",
-        "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit velit dicta expedita ullam placeat impedit iusto sapiente modi doloribus voluptatibus."
+        "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit velit dicta expedita ullam placeat impedit iusto sapiente modi doloribus voluptatibus.",
+        "tapClass": "line-through"
     },
     {
         "name":"Cycling with friends",
-        "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit velit dicta expedita ullam placeat impedit iusto sapiente modi doloribus voluptatibus."
+        "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit velit dicta expedita ullam placeat impedit iusto sapiente modi doloribus voluptatibus.",
+        "tapClass": "line-through"
     },
     {
         "name":"Going New market",
-        "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit velit dicta expedita ullam placeat impedit iusto sapiente modi doloribus voluptatibus."
+        "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit velit dicta expedita ullam placeat impedit iusto sapiente modi doloribus voluptatibus.",
+        "tapClass": "line-through"
     }
 ]

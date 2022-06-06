@@ -3,10 +3,10 @@ import { toast } from 'react-toastify';
 
 const ListCard = ({ taskList, refetch }) => {
     const { _id, name, description } = taskList;
-    const completeTask = id => {
-        toast.success('congrats! you complete task :)');
-        document.getElementById('complete').className.replace('btn-secondary');
-
+    const completeTask = _id => {
+        console.log(_id)
+        // toast.success('congrats! you complete task :)');
+        // document.getElementById('complete').classList.add("text-primary");
     }
     const deleteItem = id => {
         const procced = window.confirm('Are you sure delete this item? ');
