@@ -12,7 +12,7 @@ const Home = () => {
     return (
         <div>
             <div className='flex justify-center items-center'>
-                <h2 className='text-xl md:text-3xl py-4'>Welcome to Todo App</h2>
+                <h2 className='text-xl md:text-3xl py-4'>Todo App Add Your Task</h2>
                 {
                     user && <button onClick={handleSignOut} className='btn mx-5'>Sign Out</button>
                 }
