@@ -1,9 +1,11 @@
 import React from 'react';
+import { useForm } from 'react-hook-form';
 import { useQuery } from 'react-query';
 import { toast } from 'react-toastify';
 import ListCard from './ListCard';
 
 const ShowToDo = () => {
+    const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const { data: taskLists, isLoading, refetch } = useQuery(['available'], () =>
         fetch(`https://immense-caverns-91724.herokuapp.com/list`)
             .then(res => res.json())
@@ -11,13 +13,11 @@ const ShowToDo = () => {
     if (isLoading) {
         return <p>Loading ...</p>
     }
-    const handleTaskSubmit = e => {
-        e.preventDefault();
-        let taskName = e.target.name.value;
-        let taskDescription = e.target.description.value;
+    const onSubmit = data => {
+        console.log(data)
         const newTask = {
-            name: taskName,
-            description: taskDescription
+            name: data.taskName,
+            description: data.description
         }
         fetch(`https://immense-caverns-91724.herokuapp.com/list`, {
             method: 'POST',
@@ -29,21 +29,22 @@ const ShowToDo = () => {
             .then(res => res.json())
             .then(data => {
                 // close modal
-                taskName = '';
-                taskDescription = '';
+                reset();
                 if (data.success) {
                     refetch();
                     toast.success(`task added successfully`);
                 }
             })
-    }
+
+    };
+
+
 
 
     return (
         <div className='container mx-auto text-center'>
-            <h2 className="text-xl">Your task lists: </h2>
             <label for="addNewTask" class="btn modal-button">Add New</label>
-            <form onSubmit={handleTaskSubmit} >
+            <form onSubmit={handleSubmit(onSubmit)} >
                 <input type="checkbox" id="addNewTask" class="modal-toggle" />
                 <div class="modal modal-bottom sm:modal-middle">
                     <div class="modal-box">
@@ -53,17 +54,32 @@ const ShowToDo = () => {
                             <label class="label">
                                 <span class="label-text">Task Name</span>
                             </label>
-                            <input type="text" name='name' placeholder="Task Name" required className="input input-bordered w-full max-w-xs my-3" />
+                            <input type="text" placeholder="Task Name" className="input input-bordered w-full max-w-xs my-3"  {...register("taskName", {
+                                required: {
+                                    value: true,
+                                    message: 'Task Name is Required'
+                                },
+                            })} />
+                            <label className="label">
+                                {errors.taskName?.type === 'required' && <span className="label-text-alt text-red-500">{errors.taskName.message}</span>}
+                            </label>
                         </div>
                         <div className='form-control w-full max-w-xs mx-auto'>
                             <label class="label">
                                 <span class="label-text">Task Description</span>
                             </label>
-                            <textarea name='description' class="textarea textarea-bordered w-full max-w-xs" placeholder="Task details"></textarea>
+                            <textarea class="textarea textarea-bordered w-full max-w-xs" placeholder="Task details" {...register("description", {
+                                required: {
+                                    value: true,
+                                    message: 'Description is Required'
+                                },
+                            })}></textarea>
+                            <label className="label">
+                                {errors.description?.type === 'required' && <span className="label-text-alt text-red-500">{errors.description.message}</span>}
+                            </label>
                         </div>
                         <div class="modal-action justify-center">
                             <input for="addNewTask" type="submit" value="Add Task" class="btn w-full max-w-xs" />
-                            {/* <input type='submit' value='Add Task' for="addNewTask" class="btn w-full max-w-xs"></input> */}
                         </div>
                     </div>
                 </div>
