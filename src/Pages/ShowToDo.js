@@ -14,7 +14,6 @@ const ShowToDo = () => {
         return <p>Loading ...</p>
     }
     const onSubmit = data => {
-        console.log(data)
         const newTask = {
             name: data.taskName,
             description: data.description
@@ -43,16 +42,16 @@ const ShowToDo = () => {
 
     return (
         <div className='container mx-auto text-center'>
-            <label for="addNewTask" class="btn modal-button">Add New</label>
+            <label htmlFor="addNewTask" className="btn modal-button">Add New</label>
             <form onSubmit={handleSubmit(onSubmit)} >
-                <input type="checkbox" id="addNewTask" class="modal-toggle" />
-                <div class="modal modal-bottom sm:modal-middle">
-                    <div class="modal-box">
-                        <label for="addNewTask" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
-                        <h3 class="font-bold text-lg">Add New Task</h3>
+                <input type="checkbox" id="addNewTask" className="modal-toggle" />
+                <div className="modal modal-bottom sm:modal-middle">
+                    <div className="modal-box">
+                        <label htmlFor="addNewTask" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+                        <h3 className="font-bold text-lg">Add New Task</h3>
                         <div className='form-control w-full max-w-xs mx-auto'>
-                            <label class="label">
-                                <span class="label-text">Task Name</span>
+                            <label className="label">
+                                <span className="label-text">Task Name</span>
                             </label>
                             <input type="text" placeholder="Task Name" className="input input-bordered w-full max-w-xs my-3"  {...register("taskName", {
                                 required: {
@@ -65,10 +64,10 @@ const ShowToDo = () => {
                             </label>
                         </div>
                         <div className='form-control w-full max-w-xs mx-auto'>
-                            <label class="label">
-                                <span class="label-text">Task Description</span>
+                            <label className="label">
+                                <span className="label-text">Task Description</span>
                             </label>
-                            <textarea class="textarea textarea-bordered w-full max-w-xs" placeholder="Task details" {...register("description", {
+                            <textarea className="textarea textarea-bordered w-full max-w-xs" placeholder="Task details" {...register("description", {
                                 required: {
                                     value: true,
                                     message: 'Description is Required'
@@ -78,8 +77,8 @@ const ShowToDo = () => {
                                 {errors.description?.type === 'required' && <span className="label-text-alt text-red-500">{errors.description.message}</span>}
                             </label>
                         </div>
-                        <div class="modal-action justify-center">
-                            <input for="addNewTask" type="submit" value="Add Task" class="btn w-full max-w-xs" />
+                        <div className="modal-action justify-center">
+                            <input htmlFor="addNewTask" type="submit" value="Add Task" className="btn w-full max-w-xs" />
                         </div>
                     </div>
                 </div>

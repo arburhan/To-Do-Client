@@ -18,7 +18,6 @@ const SignUp = () => {
         const userEmail = e.target.email.value;
         const userPass = e.target.password.value;
         createUserWithEmailAndPassword(userEmail, userPass);
-        console.log(userEmail, userPass);
     };
     if (user || googleUser) {
         navigate('/home');
