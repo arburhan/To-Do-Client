@@ -1,13 +1,16 @@
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import { useQuery } from 'react-query';
 import { toast } from 'react-toastify';
+import auth from '../firebase.init';
 import ListCard from './ListCard';
 
 const ShowToDo = () => {
+    const [user] = useAuthState(auth);
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const { data: taskLists, isLoading, refetch } = useQuery(['available'], () =>
-        fetch(`https://immense-caverns-91724.herokuapp.com/list`)
+        fetch(`https://immense-caverns-91724.herokuapp.com/list/${user.email}`)
             .then(res => res.json())
     )
     if (isLoading) {
@@ -15,6 +18,7 @@ const ShowToDo = () => {
     }
     const onSubmit = data => {
         const newTask = {
+            email: user.email,
             name: data.taskName,
             description: data.description
         }
