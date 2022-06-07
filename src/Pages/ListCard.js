@@ -37,7 +37,7 @@ const ListCard = ({ taskList, refetch }) => {
         }
     }
     return (
-        <div className="card w-96 bg-base-100 shadow-xl">
+        <div className="card w-full md:w-96 bg-base-300 shadow-2xl text-white">
             <div className="card-body items-center text-center">
                 <h2 className="card-title"> {complete === true ? <strike> {name} </strike> : `${name}`} </h2>
                 <p>{complete === true ? <strike> {description} </strike> : `${description}`}</p>

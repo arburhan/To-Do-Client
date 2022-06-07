@@ -45,8 +45,9 @@ const ShowToDo = () => {
 
 
     return (
-        <div className='container mx-auto text-center'>
+        <div className='container mx-auto text-center p-2'>
             <label htmlFor="addNewTask" className="btn modal-button">Add New</label>
+            <p className="text-xl py-4">{taskLists.length === 0 ? `Add a task to see here \n Your task is secure` : `Your total task: ${taskLists.length}`}</p>
             <form onSubmit={handleSubmit(onSubmit)} >
                 <input type="checkbox" id="addNewTask" className="modal-toggle" />
                 <div className="modal modal-bottom sm:modal-middle">

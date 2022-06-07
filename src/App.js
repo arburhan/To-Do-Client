@@ -5,7 +5,6 @@ import Home from './Pages/Home';
 import Login from './Pages/Login';
 import SignUp from './Pages/SignUp';
 import RequireAuth from './Pages/RequireAuth';
-import AddToDo from './Pages/AddToDo';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -23,11 +22,6 @@ function App() {
         <Route path='/home' element={
           <RequireAuth>
             <Home></Home>
-          </RequireAuth>
-        }></Route>
-        <Route path='/addtodo' element={
-          <RequireAuth>
-            <AddToDo></AddToDo>
           </RequireAuth>
         }></Route>
       </Routes>
